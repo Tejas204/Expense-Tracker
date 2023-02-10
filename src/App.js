@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import VerticalNavbar from './components/VerticalNavbar';
+import TransactionPage from './components/TransactionPage';
+import UserProfileBudget from './components/UserProfileBudget';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // Main component --> contains the sub components
+    // Parent div
+    <div className='grid grid-cols-4'>
+
+      {/* This is a vertical navbar component
+      *It contains the links for other pages. */}
+        <div className='col-span-1'><VerticalNavbar></VerticalNavbar></div>
+        <div className='col-span-2'><TransactionPage></TransactionPage></div>
+        <div className='col-span-1'><UserProfileBudget></UserProfileBudget></div>
+      
     </div>
   );
 }
