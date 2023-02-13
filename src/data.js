@@ -5,7 +5,7 @@ import about from './images/about.png';
 import contact from './images/contact.png';
 
 
-export const navItems = [
+export let navItems = [
     {
         name: 'Home',
         image: home
