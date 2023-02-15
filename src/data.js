@@ -27,3 +27,21 @@ export let navItems = [
         image: contact
     }
 ]
+
+export let transactionHistory = [
+    {
+        expense: 'Food',
+        date: '15-02-2023',
+        amount: '-$25'
+    },
+    {
+        expense: 'Shpooing',
+        date: '15-02-2023',
+        amount: '-$50'
+    },
+    {
+        expense: 'Bonus',
+        date: '15-02-2023',
+        amount: '+$250'
+    }
+]

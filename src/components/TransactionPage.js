@@ -1,6 +1,7 @@
 import React from 'react'
 import visacard from '../images/visacard.png'
 import mastercard from '../images/mastercard.png'
+import { transactionHistory } from '../data'
 
 const TransactionPage = () => {
   return (
@@ -27,7 +28,25 @@ const TransactionPage = () => {
         </div>
 
         {/* This div contains the expense history */}
-        <div></div>
+        <div className='flex flex-col'>
+            {transactionHistory.map((transactionItem, index)=>{
+              if(transactionItem.amount.substring(0,1) == '+'){
+                  return <div className='flex justify-between w-[50%] ml-[25%] mt-10 bg-[#F5F5F5] p-4 rounded-xl' key={index}>
+                  <div className='font-medium text-md'>{transactionItem.expense}</div>
+                  <div className='font-medium text-md'>{transactionItem.date}</div>
+                  <div className='font-medium text-md text-[#17B609]'>{transactionItem.amount}</div>
+                </div>
+              }
+              else{
+                  return <div className='flex justify-between w-[50%] ml-[25%] mt-10 bg-[#F5F5F5] p-4 rounded-xl' key={index}>
+                    <div className='font-medium text-md'>{transactionItem.expense}</div>
+                    <div className='font-medium text-md'>{transactionItem.date}</div>
+                    <div className='font-medium text-md text-[#FF3D00]'>{transactionItem.amount}</div>
+                  </div>
+              }
+              
+            })}
+        </div>
     </div>
     
   )
