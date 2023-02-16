@@ -7,7 +7,7 @@ const verticalNavbar = () => {
       {/* This is the title bar of the page
       * It contains the brand name and the
       * Navigation links */}
-      <div className='flex flex-row justify-center text-3xl text-white sm:pt-2 md:pt-10 md:pb-10'>
+      <div className='flex flex-row justify-center text-md md:text-3xl text-white sm:pt-2 md:pt-10 md:pb-10'>
         Expense <span className='text-[#0492F9]'>Tracker</span>
       </div>
 
