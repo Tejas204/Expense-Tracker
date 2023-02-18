@@ -35,7 +35,7 @@ export let transactionHistory = [
         amount: '-$25'
     },
     {
-        expense: 'Shpooing',
+        expense: 'Movie',
         date: '15-02-2023',
         amount: '-$50'
     },

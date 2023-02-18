@@ -4,9 +4,11 @@ import mastercard from '../images/mastercard.png'
 import { transactionHistory } from '../data'
 
 const TransactionPage = () => {
+
+
   return (
     // This div contains the payment method and transaction history
-    <div className=''>
+    <div className='h-screen'>
       {/* This div contains the user salutation */}
       <div className='pl-[17%] pt-4'>
         <p className='text-2xl font-bold'>Hey there!</p>
@@ -28,13 +30,14 @@ const TransactionPage = () => {
         </div>
 
         {/* This div contains the expense history */}
-        <div className='flex flex-col'>
+        <div className='flex flex-col overflow-y-scroll h-1/2 scroll-smooth'>
             {transactionHistory.map((transactionItem, index)=>{
               if(transactionItem.amount.substring(0,1) == '+'){
                   return <div className='flex justify-between w-[50%] ml-[25%] mt-10 bg-[#F5F5F5] p-4 rounded-xl' key={index}>
                   <div className='font-medium text-md'>{transactionItem.expense}</div>
                   <div className='font-medium text-md'>{transactionItem.date}</div>
                   <div className='font-medium text-md text-[#17B609]'>{transactionItem.amount}</div>
+                  <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'>Delete</button>
                 </div>
               }
               else{
@@ -42,6 +45,7 @@ const TransactionPage = () => {
                     <div className='font-medium text-md'>{transactionItem.expense}</div>
                     <div className='font-medium text-md'>{transactionItem.date}</div>
                     <div className='font-medium text-md text-[#FF3D00]'>{transactionItem.amount}</div>
+                    <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'>Delete</button>
                   </div>
               }
               
