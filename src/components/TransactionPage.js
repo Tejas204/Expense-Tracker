@@ -18,7 +18,7 @@ const TransactionPage = () => {
         <img src={mastercard} className='h-[40%] w-[40%]'></img>
       </div>
 
-      {/* This div contains the transaction history */}
+      {/* This div contains functionality to submit expense */}
         <div className=''>
             <form className='flex flex-row space-x-3 justify-center'>
               <input type='text' placeholder='Add an expense' className='bg-[#D9D9D9] h-10 w-[30%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
