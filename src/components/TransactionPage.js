@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import visacard from '../images/visacard.png'
 import mastercard from '../images/mastercard.png'
 import { transactionHistory } from '../data'
 
 const TransactionPage = () => {
+
+
+  //This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
+  //the expense section is clicked.
+  let [transaction, addNewTransactionItem] = useState(transactionHistory);
 
 
   return (
@@ -20,12 +25,22 @@ const TransactionPage = () => {
         <img src={mastercard} className='h-[40%] w-[40%]'></img>
       </div>
 
-      {/* This div contains functionality to submit expense */}
+      {/* This div contains functionality to submit expense
+        * The onSubmit button will add an object to the transactionHistory and 
+        * push the updated transactionHistory object to the hook.
+        */}
         <div className=''>
             <form className='flex flex-row space-x-3 justify-center'>
-              <input type='text' placeholder='Add an expense' className='bg-[#D9D9D9] h-10 w-[30%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
-              <input type='text' placeholder='Enter amount' className='bg-[#D9D9D9] h-10 rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
-              <button type='submit' className='bg-[#0492F9] pl-4 pr-4 rounded-lg text-white text-lg'>Submit</button>
+              <input id='getExpenseNote' type='text' placeholder='Add an expense' className='bg-[#D9D9D9] h-10 w-[30%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
+              <input id='getExpenseAmount' type='text' placeholder='Enter amount' className='bg-[#D9D9D9] h-10 rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
+              <button type='button' className='bg-[#0492F9] pl-4 pr-4 rounded-lg text-white text-lg' onClick={()=>{
+                addNewTransactionItem(transactionHistory.push(
+                  {
+                    expense: document.getElementById('getExpenseNote').value,
+                    date: new Date().toLocaleString().slice(0,10),
+                    amount: "-$"+document.getElementById('getExpenseAmount').value,
+                  }))
+              }}>Submit</button>
             </form>
         </div>
 
