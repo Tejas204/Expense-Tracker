@@ -32,16 +32,19 @@ export let transactionHistory = [
     {
         expense: 'Food',
         date: '15/02/2023',
-        amount: '-$25'
+        amount: '-$25',
+        recordId: 1
     },
     {
         expense: 'Movie',
         date: '15/02/2023',
-        amount: '-$50'
+        amount: '-$50',
+        recordId: 2
     },
     {
         expense: 'Bonus',
         date: '15/02/2023',
-        amount: '+$250'
+        amount: '+$250',
+        recordId: 3
     }
 ]

@@ -10,6 +10,12 @@ const TransactionPage = () => {
   //the expense section is clicked.
   let [transaction, addNewTransactionItem] = useState(transactionHistory);
 
+  //This react hook deletes a transaction element from the transactionHistory
+  let [deletedTransaction, deletespecificTransaction] = useState(transactionHistory);
+
+  //This variable maintains the number of records in the transaction
+  let transactionCount = 2;
+
 
   return (
     // This div contains the payment method and transaction history
@@ -29,17 +35,19 @@ const TransactionPage = () => {
         * The onSubmit button will add an object to the transactionHistory and 
         * push the updated transactionHistory object to the hook.
         */}
-        <div className=''>
+        <div className='mb-5'>
             <form className='flex flex-row space-x-3 justify-center'>
-              <input id='getExpenseNote' type='text' placeholder='Add an expense' className='bg-[#D9D9D9] h-10 w-[30%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
-              <input id='getExpenseAmount' type='text' placeholder='Enter amount' className='bg-[#D9D9D9] h-10 rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none placeholder:p-2 text-lg'></input>
+              <input id='getExpenseNote' type='text' placeholder='Add an expense' className='bg-[#D9D9D9] h-10 w-[30%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none p-2 placeholder:p-2 text-lg'></input>
+              <input id='getExpenseAmount' type='text' placeholder='Enter amount' className='bg-[#D9D9D9] h-10 rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none p-2 placeholder:p-2 text-lg'></input>
               <button type='button' className='bg-[#0492F9] pl-4 pr-4 rounded-lg text-white text-lg' onClick={()=>{
+                transactionCount += 1;
                 addNewTransactionItem(transactionHistory.push(
                   {
                     expense: document.getElementById('getExpenseNote').value,
                     date: new Date().toLocaleString().slice(0,10),
                     amount: "-$"+document.getElementById('getExpenseAmount').value,
-                  }))
+                    recordId: transactionCount + 1
+                  }));
               }}>Submit</button>
             </form>
         </div>
@@ -52,7 +60,9 @@ const TransactionPage = () => {
                   <div className='font-medium text-md'>{transactionItem.expense}</div>
                   <div className='font-medium text-md'>{transactionItem.date}</div>
                   <div className='font-medium text-md text-[#17B609]'>{transactionItem.amount}</div>
-                  <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'>Delete</button>
+                  <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500' onClick={() => {
+                    console.log(transactionItem.recordId);
+                  }}>Delete</button>
                 </div>
               }
               else{
@@ -60,7 +70,9 @@ const TransactionPage = () => {
                     <div className='font-medium text-md'>{transactionItem.expense}</div>
                     <div className='font-medium text-md'>{transactionItem.date}</div>
                     <div className='font-medium text-md text-[#FF3D00]'>{transactionItem.amount}</div>
-                    <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'>Delete</button>
+                    <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'  onClick={() => {
+                    console.log(transactionItem.recordId);
+                  }}>Delete</button>
                   </div>
               }
               
