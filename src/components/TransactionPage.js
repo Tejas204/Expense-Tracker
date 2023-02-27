@@ -56,7 +56,10 @@ const TransactionPage = () => {
             </form>
         </div>
 
-        {/* This div contains the expense history */}
+        {/* This div contains the expense history.
+        * It also has a delete button. It deletes a record
+        * by splicing the array of transactionHistory with the help
+        * of the index of the array element. */}
         <div className='flex flex-col overflow-y-scroll h-1/2 scroll-smooth'>
             {transactionHistory.map((transactionItem, index)=>{
               if(transactionItem.amount.substring(0,1) == '+'){
