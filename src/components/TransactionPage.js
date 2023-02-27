@@ -11,10 +11,13 @@ const TransactionPage = () => {
   let [transaction, addNewTransactionItem] = useState(transactionHistory);
 
   //This react hook deletes a transaction element from the transactionHistory
-  let [deletedTransaction, deletespecificTransaction] = useState(transactionHistory);
+  let [deletedTransaction, deleteSpecificTransaction] = useState(transactionHistory);
 
   //This variable maintains the number of records in the transaction
   let [transactionCount, updateCount] = useState(2);
+
+  // This variable stores the id of the record to be deleted
+  let retrievedRecordId;
 
 
   return (
@@ -62,8 +65,8 @@ const TransactionPage = () => {
                   <div className='font-medium text-md'>{transactionItem.date}</div>
                   <div className='font-medium text-md text-[#17B609]'>{transactionItem.amount}</div>
                   <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500' onClick={() => {
-                    console.log(transactionItem.recordId);
-                    console.log(transactionItem);
+                    retrievedRecordId = transactionHistory.indexOf(transactionItem);
+                    deleteSpecificTransaction(transactionHistory.splice(retrievedRecordId,1));
                   }}>Delete</button>
                 </div>
               }
@@ -73,8 +76,8 @@ const TransactionPage = () => {
                     <div className='font-medium text-md'>{transactionItem.date}</div>
                     <div className='font-medium text-md text-[#FF3D00]'>{transactionItem.amount}</div>
                     <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'  onClick={() => {
-                    console.log(transactionItem.recordId);
-                    console.log(transactionItem);
+                    retrievedRecordId = transactionHistory.indexOf(transactionItem);
+                    deleteSpecificTransaction(transactionHistory.splice(retrievedRecordId,1));
                   }}>Delete</button>
                   </div>
               }
