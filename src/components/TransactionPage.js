@@ -3,7 +3,7 @@ import visacard from '../images/visacard.png'
 import mastercard from '../images/mastercard.png'
 import { transactionHistory } from '../data'
 
-const TransactionPage = () => {
+const TransactionPage = ({getExpenseReceived}) => {
 
 
   //This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
@@ -18,6 +18,11 @@ const TransactionPage = () => {
 
   // This variable stores the id of the record to be deleted
   let retrievedRecordId;
+
+  //This function will send the expense amount to the UserProfile Budget component via the App.js
+  const sendExpenseAmount = (expenseAmount) => {
+    getExpenseReceived(expenseAmount);
+  }
 
 
   return (
@@ -44,6 +49,7 @@ const TransactionPage = () => {
               <input id='getExpenseAmount' type='text' placeholder='Enter amount' className='bg-[#D9D9D9] h-10 rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none p-2 placeholder:p-2 text-lg'></input>
               <button type='button' className='bg-[#0492F9] pl-4 pr-4 rounded-lg text-white text-lg' onClick={()=>{
                 updateCount(transactionCount += 1);
+                sendExpenseAmount(parseInt(document.getElementById('getExpenseAmount').value));
                 addNewTransactionItem(transactionHistory.push(
                   {
                     expense: document.getElementById('getExpenseNote').value,

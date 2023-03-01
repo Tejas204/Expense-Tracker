@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import userAvatar from '../images/user_avatar.png';
 
 
-const UserProfileBudget = () => {
+const UserProfileBudget = ({expenseReceived}) => {
 
  //This hook will update the budget amount
  let [budgetAmount, setBudgetAmount] = useState(0);
+
+ console.log(expenseReceived);
+
 
   return (
     <div className='bg-[#F5F5F5] h-screen'>
