@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import userAvatar from '../images/user_avatar.png';
 
 
@@ -6,6 +6,33 @@ const UserProfileBudget = ({expenseReceived}) => {
 
  //This hook will update the budget amount
  let [budgetAmount, setBudgetAmount] = useState(0);
+
+ //This hook will set the deducted budget amount
+ let [amountleft, setAmountLeft] = useState(0);
+ console.log(amountleft);
+
+ // This useffect hook will update the amountLeft when budgetAmount updates
+ useEffect(() => {
+  setAmountLeft(budgetAmount);
+ }, [budgetAmount]);
+
+ // The following condition will check if an expense is received. If
+ // received, use-effect hook will be triggered once to update the 
+ // amount left
+
+useEffect(() => {
+  //Calculate the amount left
+  amountleft-=expenseReceived
+  
+  if(amountleft<0){
+    alert("You have exceeded ypur budget");
+    setAmountLeft(0);
+  }
+  else{
+    setAmountLeft(amountleft);
+  }
+}, [expenseReceived]);
+
 
  console.log(expenseReceived);
 
@@ -28,7 +55,7 @@ const UserProfileBudget = ({expenseReceived}) => {
         {/* Whenever expense is added, this amount gets deducted */}
         <div className='flex flex-col gap-y-3'>
           <p className='font-semibold'>Amount left</p>
-          <p className='font-bold text-[#17B609] ml-5'>$475</p>
+          <p className='font-bold text-[#17B609] ml-5'>${amountleft}</p>
         </div>
       </div>
 
