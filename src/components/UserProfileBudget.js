@@ -25,7 +25,7 @@ useEffect(() => {
   amountleft-=expenseReceived
   
   if(amountleft<0){
-    alert("You have exceeded ypur budget");
+    alert("You have exceeded your budget");
     setAmountLeft(0);
   }
   else{
