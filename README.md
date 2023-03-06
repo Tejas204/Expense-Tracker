@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for an expense tracker web application. The major features of this application are:
+1. Adding and expense with accompanying note. ex: Food -- $100
+2. Adding your budget
+3. Automatically tells you the budget left after you add an expense.
+4. Notifies you once you spend all your budget.
 
 ## Available Scripts
 
