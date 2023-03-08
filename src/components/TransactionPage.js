@@ -5,7 +5,6 @@ import { transactionHistory } from '../data'
 
 const TransactionPage = ({getExpenseReceived}) => {
 
-
   //This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
   //the expense section is clicked.
   let [transaction, addNewTransactionItem] = useState(transactionHistory);
@@ -57,7 +56,6 @@ const TransactionPage = ({getExpenseReceived}) => {
                     amount: "-$"+document.getElementById('getExpenseAmount').value,
                     recordId: transactionCount + 1
                   }));
-                  console.log("Transaction count"+transactionCount);
               }}>Submit</button>
             </form>
         </div>

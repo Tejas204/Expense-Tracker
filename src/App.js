@@ -11,6 +11,9 @@ function App() {
   //This hook will help pass the expense amount to the UserProfileBudget
   const [expenseReceived, getExpenseReceived] = useState(0);
 
+  //This hook will help determine if transaction can be added or not if budget is exceeded.
+  
+
   return (
     // Main component --> contains the sub components
     // Parent div
