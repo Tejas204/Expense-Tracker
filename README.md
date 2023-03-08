@@ -1,12 +1,16 @@
-# Getting Started with Create React App
+# Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for an expense tracker web application. The major features of this application are:
+1. Adding and expense with accompanying note. ex: Food -- $100
+2. Adding your budget
+3. Automatically tells you the budget left after you add an expense.
+4. Notifies you once you spend all your budget.
 
-## Available Scripts
+## Details
 
-In the project directory, you can run:
+In the project, you will run into:
 
-### `npm start`
+### `React JS`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,12 +18,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `useState Hook`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `useEffect Hook`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +33,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `Props`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -38,6 +42,14 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+### `Tailwind CSS`
+
+This web app uses tailwind css for styling.
+
+### `HTML`
+
+Well, you cannot get anywhere without the basics.
 
 ## Learn More
 
