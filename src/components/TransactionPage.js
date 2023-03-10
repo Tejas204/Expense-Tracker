@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import card1 from '../images/card1.png'
 import card2 from '../images/card2.png'
 import card3 from '../images/card3.png'
+import card4 from '../images/card4.png'
 import mastercard from '../images/mastercard.png'
 import gpay from '../images/gpay.png';
 import paypal from '../images/paypal.png';
@@ -38,8 +39,8 @@ const TransactionPage = ({getExpenseReceived}) => {
       </div>
 
       {/* This div contains the payment methods */}
-      <div className='flex flex-row justify-center mb-5'>
-        <img src={card3} className='h-[30%] w-[30%]'></img>
+      <div className='flex flex-row justify-center mb-5 mt-2'>
+        <img src={card4} className='h-[30%] w-[30%]'></img>
       </div>
 
       {/* This div contains functionality to submit expense
