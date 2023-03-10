@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import visacard from '../images/visacard.png'
+import card1 from '../images/card1.png'
+import card2 from '../images/card2.png'
+import card3 from '../images/card3.png'
 import mastercard from '../images/mastercard.png'
+import gpay from '../images/gpay.png';
+import paypal from '../images/paypal.png';
 import { transactionHistory } from '../data'
 
 const TransactionPage = ({getExpenseReceived}) => {
@@ -34,8 +38,8 @@ const TransactionPage = ({getExpenseReceived}) => {
       </div>
 
       {/* This div contains the payment methods */}
-      <div className='flex flex-row justify-center'>
-        <img src={mastercard} className='h-[40%] w-[40%]'></img>
+      <div className='flex flex-row justify-center mb-5'>
+        <img src={card3} className='h-[30%] w-[30%]'></img>
       </div>
 
       {/* This div contains functionality to submit expense

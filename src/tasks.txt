@@ -1,0 +1,6 @@
+1. On delete button press, the deleted amount should be added to the budget again - P2
+2. prepare the carousel - P1
+
+
+
+// Note: P - priority

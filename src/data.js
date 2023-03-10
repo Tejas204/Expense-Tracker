@@ -56,14 +56,17 @@ export let transactionHistory = [
 export let transactionImages = [
     {
         image: mastercard,
-        index: 1
+        index: 1,
+        selected: false
     },
     {
         image: gpay,
-        index: 2
+        index: 2,
+        selected: true
     },
     {
         image: paypal,
-        index: 3
+        index: 3,
+        selected: false
     }
 ]
