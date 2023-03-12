@@ -8,6 +8,9 @@ import gpay from './images/gpay.png';
 import paypal from './images/paypal.png';
 import mastercard from './images/mastercard.png';
 
+import card3 from './images/card3.png'
+import card4 from './images/card4.png'
+import card5 from './images/card5.jpg'
 
 export let navItems = [
     {
@@ -55,17 +58,17 @@ export let transactionHistory = [
 
 export let transactionImages = [
     {
-        image: mastercard,
+        image: card5,
         index: 1,
         selected: false
     },
     {
-        image: gpay,
+        image: card3,
         index: 2,
         selected: true
     },
     {
-        image: paypal,
+        image: card4,
         index: 3,
         selected: false
     }

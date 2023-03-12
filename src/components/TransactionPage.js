@@ -6,19 +6,23 @@ import card4 from '../images/card4.png'
 import mastercard from '../images/mastercard.png'
 import gpay from '../images/gpay.png';
 import paypal from '../images/paypal.png';
-import { transactionHistory } from '../data'
+import { transactionHistory, transactionImages } from '../data';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const TransactionPage = ({getExpenseReceived}) => {
 
-  //This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
-  //the expense section is clicked.
+  // This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
+  // the expense section is clicked.
   let [transaction, addNewTransactionItem] = useState(transactionHistory);
 
-  //This react hook deletes a transaction element from the transactionHistory
+  // This react hook deletes a transaction element from the transactionHistory
   let [deletedTransaction, deleteSpecificTransaction] = useState(transactionHistory);
 
-  //This variable maintains the number of records in the transaction
+  // This react hook maintains the number of records in the transaction
   let [transactionCount, updateCount] = useState(2);
+
+  // This hook shows the current paayment method
+  let [currentPayMenthod, setCurrentPayMethod] = useState(1);
 
   // This variable stores the id of the record to be deleted
   let retrievedRecordId;
@@ -39,8 +43,28 @@ const TransactionPage = ({getExpenseReceived}) => {
       </div>
 
       {/* This div contains the payment methods */}
+      {/* Arrows to navigate the payment options */}
       <div className='flex flex-row justify-center mb-5 mt-2'>
-        <img src={card4} className='h-[30%] w-[30%]'></img>
+        {/* Move to previous payment method if any */}
+        <FiChevronLeft size={30} className='mt-[8%] mr-[3%]' onClick={() => {
+            if(currentPayMenthod -1 >= 0){
+              currentPayMenthod -= 1;
+              setCurrentPayMethod(currentPayMenthod);
+              console.log(currentPayMenthod);
+            }
+        }}/>
+
+        {/* Reflects the current payment method */}
+        <img src={transactionImages[currentPayMenthod].image} className='h-[30%] w-[30%]'></img>
+
+        {/* Move to next payment method if any */}
+        <FiChevronRight size={30} className='mt-[8%] ml-[3%]' onClick={() => {
+          if(currentPayMenthod + 1 < transactionImages.length){
+            currentPayMenthod += 1;
+            setCurrentPayMethod(currentPayMenthod);
+            console.log(currentPayMenthod);
+          }
+        }}/>
       </div>
 
       {/* This div contains functionality to submit expense
