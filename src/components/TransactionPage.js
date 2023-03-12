@@ -43,7 +43,7 @@ const TransactionPage = ({getExpenseReceived}) => {
       </div>
 
       {/* This div contains the payment methods */}
-      {/* Arrows to navigate the payment options */}
+      {/* & Arrows to navigate the payment options */}
       <div className='flex flex-row justify-center mb-5 mt-2'>
         {/* Move to previous payment method if any */}
         <FiChevronLeft size={30} className='mt-[8%] mr-[3%]' onClick={() => {
@@ -55,7 +55,7 @@ const TransactionPage = ({getExpenseReceived}) => {
         }}/>
 
         {/* Reflects the current payment method */}
-        <img src={transactionImages[currentPayMenthod].image} className='h-[30%] w-[30%]'></img>
+        <img src={transactionImages[currentPayMenthod].image} className='h-[30%] w-[30%] motion-reduce:'></img>
 
         {/* Move to next payment method if any */}
         <FiChevronRight size={30} className='mt-[8%] ml-[3%]' onClick={() => {

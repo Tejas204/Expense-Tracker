@@ -1,6 +1,10 @@
 1. On delete button press, the deleted amount should be added to the budget again - P2
-2. prepare the carousel - P1 -- working 
+3. The transaction history should change according to the payment option
 
 
 
 // Note: P - priority
+
+
+/*********** Completed tasks *************/
+2. prepare the carousel - P1 -- done -- 12-03-2023
