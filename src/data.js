@@ -11,6 +11,7 @@ import mastercard from './images/mastercard.png';
 import card3 from './images/card3.png'
 import card4 from './images/card4.png'
 import card5 from './images/card5.jpg'
+import card6 from './images/card6.png'
 
 export let navItems = [
     {
@@ -58,7 +59,7 @@ export let transactionHistory = [
 
 export let transactionImages = [
     {
-        image: card5,
+        image: card6,
         index: 1,
         selected: false
     },

@@ -55,7 +55,7 @@ const TransactionPage = ({getExpenseReceived}) => {
         }}/>
 
         {/* Reflects the current payment method */}
-        <img src={transactionImages[currentPayMenthod].image} className='h-[30%] w-[30%] motion-reduce:'></img>
+        <img id='paymentImage' src={transactionImages[currentPayMenthod].image} className='h-[30%] w-[30%] hover:scale-110 ease-in-out duration-200'></img>
 
         {/* Move to next payment method if any */}
         <FiChevronRight size={30} className='mt-[8%] ml-[3%]' onClick={() => {
