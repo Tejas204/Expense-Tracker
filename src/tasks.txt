@@ -1,5 +1,6 @@
-1. On delete button press, the deleted amount should be added to the budget again - P2
+
 3. The transaction history should change according to the payment option
+4. Add some hover effects on buttons
 
 
 
@@ -7,4 +8,5 @@
 
 
 /*********** Completed tasks *************/
+1. On delete button press, the deleted amount should be added to the budget again - P2 -- done -- 20-03-2023
 2. prepare the carousel - P1 -- done -- 12-03-2023
