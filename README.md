@@ -16,15 +16,14 @@ React is a free and open-source front-end JavaScript library for building user i
 
 ### `useState Hook`
 
-useState is a Hook that lets you add React state to function components.
+useState is a Hook that lets you add React state to function components. This react hook is used for a lot of different purposes in this project. Some of them are:
+1. Passing values between components
+2. Selecting payment option in the form of a slider
+3. Setting the values of certain values based on user action.
 
 ### `useEffect Hook`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Effect Hook lets you perform side effects in function components. In this project, the useEffect hook is extensively used to set values of variables, whenever they are updated.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
