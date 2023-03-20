@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import userAvatar from '../images/user_avatar.png';
 
 
-const UserProfileBudget = ({expenseReceived}) => {
+const UserProfileBudget = ({expenseReceived, deletedAmount}) => {
 
  //This hook will update the budget amount
  let [budgetAmount, setBudgetAmount] = useState(0);
@@ -22,8 +22,8 @@ const UserProfileBudget = ({expenseReceived}) => {
  // The following condition will check if an expense is received. If
  // received, use-effect hook will be triggered once to update the 
  // amount left
-
 useEffect(() => {
+
   //Calculate the amount left
   amountleft-=expenseReceived
   
@@ -38,6 +38,16 @@ useEffect(() => {
     setAmountLeft(amountleft);
   }
 }, [expenseReceived]);
+
+// The following use effect hook will add the deleted amount to the budget
+useEffect(() => {
+  amountleft += deletedAmount;
+  budgetAmount += deletedAmount;
+
+  //call specific hooks
+  setAmountLeft(amountleft);
+  setBudgetAmount(budgetAmount);
+}, [deletedAmount])
 
   
 

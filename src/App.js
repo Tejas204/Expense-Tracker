@@ -11,7 +11,8 @@ function App() {
   //This hook will help pass the expense amount to the UserProfileBudget
   const [expenseReceived, getExpenseReceived] = useState(0);
 
-  //This hook will help determine if transaction can be added or not if budget is exceeded.
+  //This hook will add a deleted transaction amount back the budget
+  const [deletedAmount, getDeletedAmount] = useState(0);
   
 
   return (
@@ -22,8 +23,8 @@ function App() {
       {/* This is a vertical navbar component
       *It contains the links for other pages. */}
         <div className='col-span-1'><VerticalNavbar></VerticalNavbar></div>
-        <div className='col-span-3'><TransactionPage getExpenseReceived={getExpenseReceived}></TransactionPage></div>
-        <div className='col-span-1'><UserProfileBudget expenseReceived={expenseReceived}></UserProfileBudget></div>
+        <div className='col-span-3'><TransactionPage getExpenseReceived={getExpenseReceived} getDeletedAmount={getDeletedAmount}></TransactionPage></div>
+        <div className='col-span-1'><UserProfileBudget expenseReceived={expenseReceived} deletedAmount={deletedAmount}></UserProfileBudget></div>
     </div>
   );
 }

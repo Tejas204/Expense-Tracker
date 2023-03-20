@@ -9,7 +9,7 @@ import paypal from '../images/paypal.png';
 import { transactionHistory, transactionImages } from '../data';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const TransactionPage = ({getExpenseReceived}) => {
+const TransactionPage = ({getExpenseReceived, getDeletedAmount}) => {
 
   // This react hook takes transactionHistory as value which gets updated when the onSubmit buton in
   // the expense section is clicked.
@@ -27,9 +27,14 @@ const TransactionPage = ({getExpenseReceived}) => {
   // This variable stores the id of the record to be deleted
   let retrievedRecordId;
 
-  //This function will send the expense amount to the UserProfile Budget component via the App.js
+  //This function will send the expense amount to the UserProfile Budget component via the App.js file
   const sendExpenseAmount = (expenseAmount) => {
     getExpenseReceived(expenseAmount);
+  }
+
+  //This function will send the deleted amount to the UserProfile Budget Component via the App.js file
+  const sendDeletedAmount = (deletedAmt) => {
+    getDeletedAmount(deletedAmt);
   }
 
 
@@ -101,7 +106,13 @@ const TransactionPage = ({getExpenseReceived}) => {
                   <div className='font-medium text-md'>{transactionItem.date}</div>
                   <div className='font-medium text-md text-[#17B609]'>{transactionItem.amount}</div>
                   <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500' onClick={() => {
+                    // get the deleted record
                     retrievedRecordId = transactionHistory.indexOf(transactionItem);
+                    
+                    // send the amount of deleted record to app.js
+                    sendDeletedAmount(parseInt(transactionItem.amount.slice(2)));
+                    
+                    // delete the record
                     deleteSpecificTransaction(transactionHistory.splice(retrievedRecordId,1));
                   }}>Delete</button>
                 </div>
@@ -112,7 +123,13 @@ const TransactionPage = ({getExpenseReceived}) => {
                     <div className='font-medium text-md'>{transactionItem.date}</div>
                     <div className='font-medium text-md text-[#FF3D00]'>{transactionItem.amount}</div>
                     <button type='submit' className='pl-4 pr-4 rounded-lg text-white text-lg bg-red-500'  onClick={() => {
+                    // get the deleted record
                     retrievedRecordId = transactionHistory.indexOf(transactionItem);
+                    
+                    // send the amount of deleted record to app.js
+                    sendDeletedAmount(parseInt(transactionItem.amount.slice(2)));
+                    
+                    // delete the record
                     deleteSpecificTransaction(transactionHistory.splice(retrievedRecordId,1));
                   }}>Delete</button>
                   </div>
