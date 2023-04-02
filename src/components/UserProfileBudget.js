@@ -41,12 +41,34 @@ useEffect(() => {
 
 // The following use effect hook will add the deleted amount to the budget
 useEffect(() => {
-  amountleft += deletedAmount;
-  budgetAmount += deletedAmount;
+  if(amountleft == 0 && budgetAmount == 0){
+    amountleft += deletedAmount;
+    budgetAmount += deletedAmount;
 
-  //call specific hooks
-  setAmountLeft(amountleft);
-  setBudgetAmount(budgetAmount);
+    //call setBudgetAmount hook
+    setBudgetAmount(budgetAmount);
+
+    //call setAmountLeft hook
+    setAmountLeft(amountleft);
+  }
+  else if((amountleft > 0 && budgetAmount > 0) && (amountleft<budgetAmount)){
+    amountleft += deletedAmount;
+
+    //call setAmountLeft hook
+    setAmountLeft(amountleft);
+  }
+  else if((amountleft > 0 && budgetAmount > 0) && (amountleft == budgetAmount)){
+    amountleft += deletedAmount;
+    budgetAmount += deletedAmount;
+
+    //call setBudgetAmount hook
+    setBudgetAmount(budgetAmount);
+
+    //call setAmountLeft hook
+    setAmountLeft(amountleft);
+  }
+
+
 }, [deletedAmount])
 
   
