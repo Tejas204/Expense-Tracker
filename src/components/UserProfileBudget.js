@@ -84,7 +84,7 @@ useEffect(() => {
       <form className='flex flex-col space-y-10 justify-items-center mt-5'>
           <input id='budgetAmountDiv' type='text' placeholder='Add an amount' className='bg-[#D9D9D9] h-10 w-[70%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none p-2 placeholder:p-2 text-lg ml-[15%]'></input>
           <input type='text' placeholder='Note' className='bg-[#D9D9D9] h-10 w-[70%] rounded-lg focus:ring-2 focus:ring-[#0492F9] outline-none p-2 placeholder:p-2 text-lg ml-[15%]'></input>
-          <button type='button' className='bg-[#0492F9] p-2 w-[30%] rounded-lg text-white text-lg ml-[35%]' onClick={() => {
+          <button type='button' className='bg-[#0492F9] p-2 w-[30%] rounded-lg text-white text-lg ml-[35%] hover:ring-2 hover:ring-offset-2 hover:ring-[#0492F9] transition-all duration-200' onClick={() => {
             setBudgetAmount(budgetAmount+parseInt(document.getElementById('budgetAmountDiv').value));
             document.getElementById('budgetAmountDiv').innerHTML = "";
           }}>Submit</button>
