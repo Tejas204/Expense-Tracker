@@ -25,7 +25,7 @@ useState is a Hook that lets you add React state to function components. This re
 
 The Effect Hook lets you perform side effects in function components. In this project, the useEffect hook is extensively used to set values of variables, whenever they are updated.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
 
 ### `Props`
 
