@@ -33,7 +33,7 @@ This web app uses tailwind css for styling.
 
 Well, you cannot get anywhere without the basics.
 
-### Features
+## Features
 
 This expense tracker website comes with a bundle of features. Some of them are listed below:
 1. Users can add their expenses, delete the ones they entered by mistake. The logic takes care to return the deleted amount back to their budget.
