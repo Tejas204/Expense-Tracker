@@ -25,18 +25,6 @@ useState is a Hook that lets you add React state to function components. This re
 
 The Effect Hook lets you perform side effects in function components. In this project, the useEffect hook is extensively used to set values of variables, whenever they are updated.
 
-
-
-### `Props`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
 ### `Tailwind CSS`
 
 This web app uses tailwind css for styling.
@@ -45,15 +33,11 @@ This web app uses tailwind css for styling.
 
 Well, you cannot get anywhere without the basics.
 
-## Learn More
+### Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This expense tracker website comes with a bundle of features. Some of them are listed below:
+1. Users can add their expenses, delete the ones they entered by mistake. The logic takes care to return the deleted amount back to their budget. 2. Users can also increase their budget if they want to. 
+3. At the same time, users who cross the budget limit are shown a alert and their budget is set to 0!
 
 ### Analyzing the Bundle Size
 
