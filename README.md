@@ -36,7 +36,8 @@ Well, you cannot get anywhere without the basics.
 ### Features
 
 This expense tracker website comes with a bundle of features. Some of them are listed below:
-1. Users can add their expenses, delete the ones they entered by mistake. The logic takes care to return the deleted amount back to their budget. 2. Users can also increase their budget if they want to. 
+1. Users can add their expenses, delete the ones they entered by mistake. The logic takes care to return the deleted amount back to their budget.
+2. Users can also increase their budget if they want to. 
 3. At the same time, users who cross the budget limit are shown a alert and their budget is set to 0!
 
 ### Analyzing the Bundle Size
