@@ -1,5 +1,7 @@
 # Expense Tracker
 
+![](src/Images/UI.png)
+
 This repository contains the code for an expense tracker web application. The major features of this application are:
 1. Adding and expense with accompanying note. ex: Food -- $100
 2. Adding your budget
