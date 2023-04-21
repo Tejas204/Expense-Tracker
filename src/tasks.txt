@@ -1,16 +1,12 @@
 
-3. The transaction history should change according to the payment option
---> give a card number to each transaction
---> while generating the expense history, check the card number against the selected payment option (stored in a hook) and 
-    accordingly generate the payment history. (Condition found at line no: 104, 122)
-
-
-
-
 // Note: P - priority
 
 
 /*********** Completed tasks *************/
 1. On delete button press, the deleted amount should be added to the budget again - P2 -- done -- 20-03-2023
 2. prepare the carousel - P1 -- done -- 12-03-2023
+3. The transaction history should change according to the payment option -- done -- 21-04-2023
+--> give a card number to each transaction
+--> while generating the expense history, check the card number against the selected payment option (stored in a hook) and 
+    accordingly generate the payment history. (Condition found at line no: 104, 122)
 4. Add some hover effects on buttons - P3 -- done -- 02-04-2023
