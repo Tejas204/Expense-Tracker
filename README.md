@@ -44,5 +44,6 @@ This expense tracker website comes with a bundle of features. Some of them are l
 1. Users can add their expenses, delete the ones they entered by mistake. The logic takes care to return the deleted amount back to their budget.
 2. Users can also increase their budget if they want to. 
 3. At the same time, users who cross the budget limit are shown a alert and their budget is set to 0!
+4. On changing the payment method, users will be able to see the transaction records associated with that payment method.
 
 
