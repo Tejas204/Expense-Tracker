@@ -89,7 +89,8 @@ const TransactionPage = ({getExpenseReceived, getDeletedAmount}) => {
                     expense: document.getElementById('getExpenseNote').value,
                     date: new Date().toLocaleString().slice(0,10),
                     amount: "-$"+document.getElementById('getExpenseAmount').value,
-                    recordId: transactionCount + 1
+                    recordId: transactionCount + 1,
+                    cardNo: currentPayMenthod
                   }));
               }}>Submit</button>
             </form>
@@ -101,7 +102,7 @@ const TransactionPage = ({getExpenseReceived, getDeletedAmount}) => {
         * of the index of the array element. */}
         <div className='flex flex-col overflow-y-scroll h-1/2 scroll-smooth'>
             {transactionHistory.map((transactionItem, index)=>{
-              if(transactionItem.amount.substring(0,1) == '+'){
+              if(transactionItem.amount.substring(0,1) == '+' && transactionItem.cardNo == currentPayMenthod){
                   return <div className='flex justify-between w-[50%] ml-[25%] mt-10 bg-[#F5F5F5] p-4 rounded-xl' key={index}>
                   <div className='font-medium text-md'>{transactionItem.expense}</div>
                   <div className='font-medium text-md'>{transactionItem.date}</div>
@@ -118,7 +119,7 @@ const TransactionPage = ({getExpenseReceived, getDeletedAmount}) => {
                   }}>Delete</button>
                 </div>
               }
-              else{
+              else if(transactionItem.amount.substring(0,1) == '-' && transactionItem.cardNo == currentPayMenthod){
                   return <div className='flex justify-between w-[50%] ml-[25%] mt-10 bg-[#F5F5F5] p-4 rounded-xl' key={index}>
                     <div className='font-medium text-md'>{transactionItem.expense}</div>
                     <div className='font-medium text-md'>{transactionItem.date}</div>

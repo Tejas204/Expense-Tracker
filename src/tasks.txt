@@ -1,5 +1,8 @@
 
 3. The transaction history should change according to the payment option
+--> give a card number to each transaction
+--> while generating the expense history, check the card number against the selected payment option (stored in a hook) and 
+    accordingly generate the payment history. (Condition found at line no: 104, 122)
 
 
 

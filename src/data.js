@@ -40,19 +40,36 @@ export let transactionHistory = [
         expense: 'Food',
         date: '15/02/2023',
         amount: '-$25',
-        recordId: 1
+        recordId: 1,
+        cardNo: 1
     },
     {
         expense: 'Movie',
         date: '15/02/2023',
         amount: '-$50',
-        recordId: 2
+        recordId: 2,
+        cardNo: 2
     },
     {
         expense: 'Bonus',
         date: '15/02/2023',
         amount: '+$1050',
-        recordId: 3
+        recordId: 3,
+        cardNo: 1
+    },
+    {
+        expense: 'Movie',
+        date: '28/02/2023',
+        amount: '-$150',
+        recordId: 3,
+        cardNo: 1
+    },
+    {
+        expense: 'Zoo',
+        date: '20/04/2023',
+        amount: '-$50',
+        recordId: 3,
+        cardNo: 2
     }
 ]
 
@@ -72,4 +89,5 @@ export let transactionImages = [
         index: 3,
         selected: false
     }
+
 ]
